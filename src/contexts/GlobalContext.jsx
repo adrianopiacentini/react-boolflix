@@ -9,6 +9,7 @@ const GlobalContextProvider = ({ children }) => {
     const apiKey = "63a1977c5673172aec71883eccbc65cb"
     // Ricorda di aggiungere /movie o /tv quando effettui la chiamata all'api
 
+
     const globalProviderValue = {
         moviesArray,
         setMoviesArray,
