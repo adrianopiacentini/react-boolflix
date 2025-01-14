@@ -6,7 +6,7 @@ import axios from 'axios'
 function Nav() {
 
     const [inputSearch, setInputSearch] = useState('')
-    const { setMoviesArray, api, apiKey } = useGlobalContext()
+    const { setMoviesArray, api, apiKey, moviesArray } = useGlobalContext()
 
     const onChange = (event) => {
         setInputSearch(event.target.value)
@@ -20,8 +20,9 @@ function Nav() {
                 query: inputSearch
             }
         }).then((resp) => {
-            console.log(resp)
+            // console.log(resp.data.results)
             setMoviesArray(resp.data.results)
+            console.log(moviesArray)
         })
     }
 
