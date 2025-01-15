@@ -1,3 +1,24 @@
-.debug {
-    background-color: red;
+.card {
+    position:relative;
+    width:50%;
+    gap:5px;
+}
+
+.cardContent {
+    position:absolute;
+    top:0;
+    left:0;
+    background-color: black;
+    color: white;  
+    margin:20px;
+    display:none;
+}
+
+.card:hover .cardContent {
+    display:block;
+}
+
+.language {
+    display:inline-block;
+    width:20px;
 }

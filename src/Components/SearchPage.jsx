@@ -1,5 +1,6 @@
 import { useGlobalContext } from "../contexts/GlobalContext"
 import AppCard from "./AppCard"
+import style from "./SearchPage.module.css"
 
 function SearchPage() {
 
@@ -9,19 +10,27 @@ function SearchPage() {
 
     return (
         <>
-            <h1>Array di serie</h1>
-            {seriesArray.map((curItem => {
-                return (
-                    <AppCard key={curItem.id} curItem={curItem} />
-                )
-            }))}
+            <div className={style.container}>
+                <h2>Film</h2>
+                <section>
 
-            <h1>Array di film</h1>
-            {moviesArray.map((curItem => {
-                return (
-                    <AppCard key={curItem.id} curItem={curItem} />
-                )
-            }))}
+                    {moviesArray.map((curItem => {
+                        return (
+                            <AppCard key={curItem.id} curItem={curItem} />
+                        )
+                    }))}
+                </section>
+
+                <h2>Serie TV</h2>
+                <section>
+
+                    {seriesArray.map((curItem => {
+                        return (
+                            <AppCard key={curItem.id} curItem={curItem} />
+                        )
+                    }))}
+                </section>
+            </div>
         </>
     )
 }

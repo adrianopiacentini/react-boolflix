@@ -17,7 +17,7 @@ function AppCard({ curItem, lang }) {
             flag = '../../public/placeholder.png'
         }
 
-        return <img src={flag} />
+        return <img src={flag} className={style.language} />
     }
 
     const stars = (vote) => {
@@ -25,9 +25,9 @@ function AppCard({ curItem, lang }) {
         const rating = Math.ceil(vote / 2)
         for (let i = 1; i <= 5; i++) {
             if (rating >= i) {
-                stars.push(<i class="fa-solid fa-star"></i>)
+                stars.push(<i className="fa-solid fa-star"></i>)
             } else {
-                stars.push(<i class="fa-regular fa-star"></i>)
+                stars.push(<i className="fa-regular fa-star"></i>)
             }
         }
 
@@ -35,14 +35,20 @@ function AppCard({ curItem, lang }) {
     }
 
     return (
-        <>
-            <div className={style.debug}>Titolo: {curItem.title || curItem.name}</div>
-            <div>Titolo originale: {curItem.original_title || curItem.original_name}</div>
-            {lang(curItem.original_language)}
-            <div>Voto: {curItem.vote_average}</div>
-            <img src={`${posterUrl}/${curItem.poster_path}`} />
-            {stars(curItem.vote_average)}
-        </>
+
+        <div>
+            <div className={style.card}>
+                <img src={`${posterUrl}/${curItem.poster_path}`} />
+                <div className={style.cardContent}>
+                    <div>Titolo: {curItem.title || curItem.name}</div>
+                    <div>Titolo originale: {curItem.original_title || curItem.original_name}</div>
+                    <div>Lingua: {lang(curItem.original_language)}</div>
+                    <div>Voto: {curItem.vote_average}</div>
+                    {stars(curItem.vote_average)}
+                </div>
+            </div>
+        </div>
+
     )
 }
 

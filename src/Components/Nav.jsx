@@ -59,7 +59,7 @@ function Nav() {
         <nav>
             <form onSubmit={handleSubmit}>
                 <input type="text" value={inputSearch} onChange={onChange} onKeyUp={() => handleEnterKey} className={style.search} placeholder="Cerca film e serie tv" />
-                <button type="submit" className={style.btn}><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button type="submit" className={style.btn}><i className="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </nav>
 
