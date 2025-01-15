@@ -1,27 +1,27 @@
 import { useGlobalContext } from "../contexts/GlobalContext"
+import AppCard from "./AppCard"
 
 function SearchPage() {
 
-    const { moviesArray } = useGlobalContext()
+    const {
+        moviesArray, seriesArray
+    } = useGlobalContext()
 
     return (
         <>
-            {moviesArray.map((curMovie) => {
-                const lang = curMovie.original_language === 'en'
-                    ? <img src="../../public/en.png"></img>
-                    : curMovie.original_language === 'it'
-                        ? <img src="../../public/it.png"></img>
-                        : <img src="../../public/placeholder.png"></img>
-
+            <h1>Array di serie</h1>
+            {seriesArray.map((curItem => {
                 return (
-                    <div key={curMovie.id}>
-                        Titolo: {curMovie.title}
-                        Titolo originale: {curMovie.original_title}
-                        Lingua: {lang}
-                        Voto: {curMovie.vote_average}
-                    </div>
+                    <AppCard key={curItem.id} curItem={curItem} />
                 )
-            })}
+            }))}
+
+            <h1>Array di film</h1>
+            {moviesArray.map((curItem => {
+                return (
+                    <AppCard key={curItem.id} curItem={curItem} />
+                )
+            }))}
         </>
     )
 }

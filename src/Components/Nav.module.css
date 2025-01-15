@@ -1,0 +1,16 @@
+.search {
+    padding:5px;
+    margin:15px;
+    border-radius:10px;
+}
+
+.btn {
+    border:none;
+    color:white;
+    background:transparent;
+    font-size:100%
+}
+
+.btn:hover {
+    cursor:pointer;
+}
